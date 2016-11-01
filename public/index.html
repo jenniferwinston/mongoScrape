@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Article notes</title>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <style>
+    body{
+    background-color: white;
+    background-image: url("background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    font-family: 'Inconsolata', monospace;
+    }
+    #wrapper{
+      width:960px;
+      margin: 0 auto;
+      padding-top: 5%;
+    }
+    #articles{
+      width:60%;
+      height:700px;
+      display:inline-block;
+      overflow: auto;
+    }
+    #notes{
+      width:30%;
+      float:right;
+    }
+    textarea, input{
+      display:block;
+      width:100%;
+      background-color: #FCF5C7;
+    }
+    input{
+      height:36px;
+      font-size: 24px;
+    }
+    textarea{
+      height:200px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <h1>Recent Articles</h1>
+    <h2>Click the article to create or read the notes.</h2>
+    <div id="articles"></div>
+    <div id="notes"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
