@@ -22,7 +22,11 @@ var db = mongoose.connection;
 
 // show any errors
 db.on('error', function(err){
-	console.log('Mongoose error: ' + err);
+	console.log('Mongoose error: ', err);
+});
+
+db.once('open', function(){
+	console.log("Mongoose successful");
 });
 
 // two models
@@ -37,7 +41,7 @@ app.get('/', function(req, res){
 
 // get request to scrape
 app.get('/scrape', function(req, res){
-	request('https://www.entrepreneur.com/topic/coding', function(error, response, html){
+	request('https://fstoppers.com/', function(error, response, html){
 		var $ = cheerio.load(html);
 
 		$('article h2').each(function(i, element){
@@ -60,6 +64,15 @@ app.get('/scrape', function(req, res){
 	});
 
 	res.send("Scrape Complete");
+});
+
+// get scraped articles
+app.get('/articles', function(req, res){
+	Article.find({}, function(err, doc){
+		if(err){
+			console.log(err);
+		} else { res.json(doc); }
+	});
 });
 
 // grabs an article
