@@ -19,9 +19,9 @@ $(document).on('click', 'p', function(){
 	.done(function(data){
 		console.log(data);
 		//post info from article to html
-		$('#notes').append('<h2>' + data.title + '</h2>');
-		$('#notes').append('<input id="titleinput" name="title">');
-		$('#notes').append('<textarea id="bodyinput" name="body"></textarea>');
+		$('#notes').append('<h2 class="noteTitle">' + data.title + '</h2>');
+		$('#notes').append('<input id="titleinput" name="title" placeholder="Message Title">');
+		$('#notes').append('<textarea id="bodyinput" name="body" placeholder="Message"></textarea>');
 		$('#notes').append('<button data-id="' + data._id + '"id="savenote">Save Note</button>');
 
 		if(data.note){
