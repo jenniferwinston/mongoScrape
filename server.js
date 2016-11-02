@@ -41,7 +41,7 @@ app.get('/', function(req, res){
 
 // get request to scrape
 app.get('/scrape', function(req, res){
-	request('https://fstoppers.com/', function(error, response, html){
+	request('http://abcnews.go.com/', function(error, response, html){
 		var $ = cheerio.load(html);
 
 		$('article h2').each(function(i, element){
