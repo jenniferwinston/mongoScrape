@@ -44,10 +44,11 @@ app.get('/scrape', function(req, res){
 	request('http://abcnews.go.com/', function(error, response, html){
 		var $ = cheerio.load(html);
 
-		$('article h2').each(function(i, element){
+		$('h1').each(function(i, element){
 			var result = {};
 			// add text and save
 			result.title = $(this).children('a').text();
+			
 			result.link = $(this).children('a').attr('href');
 
 			// create new entry
