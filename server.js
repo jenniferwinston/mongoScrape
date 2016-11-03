@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 // Our scraping tools are prepared, too
 var request = require('request'); 
 var cheerio = require('cheerio');
+var exhbs = require('express-handlebars');
 
 // mongodb://heroku_hh1fb970:8veosub1u77h11fn1l2lsrbhld@ds143707.mlab.com:43707/heroku_hh1fb970
 
