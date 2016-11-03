@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var request = require('request'); 
 var cheerio = require('cheerio');
 
-// 'https://www.entrepreneur.com/topic/coding'
+// mongodb://heroku_hh1fb970:8veosub1u77h11fn1l2lsrbhld@ds143707.mlab.com:43707/heroku_hh1fb970
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
@@ -17,7 +17,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost/mongoScrape');
+// mongoose.connect('mongodb://localhost/mongoScrape');
+mongoose.connect('mongodb://heroku_hh1fb970:8veosub1u77h11fn1l2lsrbhld@ds143707.mlab.com:43707/heroku_hh1fb970');
 var db = mongoose.connection;
 
 // show any errors
